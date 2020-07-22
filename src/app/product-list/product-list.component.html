@@ -33,7 +33,9 @@
             <th>
               {{ product.imageUrl }}
             </th>
-            <th>{{ product.code }}</th>
+            <th [routerLink]="['/product', product.code]">
+              {{ product.code }}
+            </th>
             <th>{{ product.name | uppercase | productName }}</th>
             <th>{{ product.price | number: "1.2-2" }}</th>
             <th>{{ product.available }}</th>
