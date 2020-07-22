@@ -6,19 +6,19 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductNamePipe } from './product-name.pipe';
+import { FormsModule } from '@angular/forms';
+import { ProductFilterPipe } from './product-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProductListComponent,
-    ProductNamePipe
+    ProductNamePipe,
+    ProductFilterPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
