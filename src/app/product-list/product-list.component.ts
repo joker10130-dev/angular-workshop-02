@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './../models/product';
+import { ProductService } from './../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,35 +9,17 @@ import { Product } from './../models/product';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
-  filterData: string = '';
+  filterData = '';
 
-  constructor() {}
+  constructor(private service: ProductService) {}
 
   ngOnInit(): void {
-    const p1 = new Product(
-      'xxx',
-      'Test 1 5',
-      1020.052,
-      true,
-      5,
-      'www.blahblah.com'
-    );
-    const p2 = new Product(
-      'xxy',
-      'Test 2',
-      30.5,
-      false,
-      4,
-      'www.blahblah2.com'
-    );
-    const p3 = new Product(
-      'xxz',
-      'Test 3 456',
-      50.78,
-      true,
-      3,
-      'www.blahblah3.com'
-    );
-    this.products.push(p1, p2, p3);
+    this.getAll();
+  }
+
+  getAll(): void {
+    this.service.getAllProduct().subscribe((products) => {
+      return (this.products = products);
+    });
   }
 }
