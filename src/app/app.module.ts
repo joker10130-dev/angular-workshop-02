@@ -10,6 +10,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductNamePipe } from './product-name.pipe';
 
 import { ProductFilterPipe } from './product-filter.pipe';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProductFilterPipe } from './product-filter.pipe';
     ProductListComponent,
     ProductNamePipe,
     ProductFilterPipe,
+    RatingComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
