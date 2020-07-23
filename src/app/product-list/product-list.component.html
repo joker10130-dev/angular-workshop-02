@@ -31,7 +31,7 @@
         <tbody *ngIf="products.length > 0">
           <tr *ngFor="let product of products | productFilter: filterData">
             <th>
-              {{ product.imageUrl }}
+              <img src="{{ product.imageUrl }}" width="50px" />
             </th>
             <th [routerLink]="['/product', product.code]">
               {{ product.code }}
